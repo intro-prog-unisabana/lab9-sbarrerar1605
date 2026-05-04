@@ -9,8 +9,10 @@ while True:
     if command == "X":
         break
 
-    action, value = command.split()
-    value = int(value)
+    parts = command.split()
+
+    action = parts[0]
+    value = int(parts[1])
 
     if action == "A":
         plane.ascend(value)
