@@ -3,6 +3,8 @@ from aircraft import Aircraft
 model = input("Enter aircraft model:\n")
 plane = Aircraft(model)
 
+altitude = 0
+
 while True:
     command = input("Enter command (A for ascent, D for descent, X to exit):\n").strip()
 
@@ -18,8 +20,8 @@ while True:
     value = int(value)
 
     if action == "A":
-        plane.ascend(value)
+        altitude += value
     elif action == "D":
-        plane.descend(value)
+        altitude -= value
 
-print(f"Final altitude: {plane.altitude} feet")
+print(f"Final altitude: {altitude} feet")
